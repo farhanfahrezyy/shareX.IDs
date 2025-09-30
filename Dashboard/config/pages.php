@@ -8,6 +8,9 @@ return [
         'aktif' => 'Dashboard/pages/customer/aktif.html',
         'cancelled' => 'Dashboard/pages/customer/cancelled.html',
         'account-tambah' => 'Dashboard/pages/customer/tambah-akun.html',
+        'tambah-ke-group' => 'Dashboard/pages/customer/tambah-ke-group.html',
+
+        
 
 
         // Groups
@@ -51,6 +54,7 @@ return [
         'aktif' => 'Customer > Aktif',
         'cancelled' => 'Customer > Cancelled',
         'account-tambah' => 'Akun > Tambah',
+        'tambah-ke-group' => 'Customer > Tambah ke Group',
 
         // Groups
         'groups' => 'Groups & Accounts > Groups',
