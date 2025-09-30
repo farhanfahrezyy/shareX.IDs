@@ -1,197 +1,444 @@
 <!-- Pre Order Page -->
 <div class="bg-white rounded-lg shadow-sm animate-fade-in">
-    <div class="px-6 py-4 border-b border-gray-200">
+    <div class="px-4 sm:px-6 py-4 border-b border-gray-200">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-            <h1 class="text-xl font-semibold text-gray-800">Pre Order</h1>
-            <div class="mt-4 sm:mt-0 flex flex-wrap gap-2">
+            <h1 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-0">Pre Order</h1>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <div class="w-full sm:w-64">
+                    <input id="table-search" type="search" placeholder="Cari di tabel" aria-label="Cari di tabel"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm">
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="overflow-x-auto">
-        <table class="w-full divide-y divide-gray-200">
+    <!-- Desktop Table View -->
+    <div class="hidden lg:block overflow-x-auto">
+        <table id="pre-order-table" class="w-full divide-y divide-gray-200 min-w-[1200px]">
             <thead class="bg-gray-50">
                 <tr>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Invoice
-                        Number</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer
-                    </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produk
-                    </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal
-                        Pesan</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal
-                        Expired</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga
-                        Provider</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jumlah
-                        Member</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga
-                        Satuan</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Biaya
-                    </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Satuan
-                        Total</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status
-                        Pembayaran</th>
-                    <th
-                        class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[640px]">
-                        Link Pembayaran</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status
-                    </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Akun</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions
-                    </th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Invoice</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Customer</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produk</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Pesan</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal Expired</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga Provider</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Jumlah Member</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Harga Satuan</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Biaya</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Satuan Total</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status Pembayaran</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider min-w-[300px]">Link Pembayaran</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Akun</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
                 </tr>
             </thead>
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody id="preorder-tbody" class="bg-white divide-y divide-gray-200">
                 <tr class="hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">1</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">1</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <span class="font-medium text-gray-800">INV #140</span>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <div class="flex flex-col">
                             <span class="font-medium">Sopipi</span>
-                            <span class="text-sm text-gray-500">sopipi@gmail.com</span>
-                            <span class="text-sm text-gray-500">6281997930005</span>
+                            <span class="text-xs text-gray-500">sopipi@gmail.com</span>
+                            <span class="text-xs text-gray-500">6281997930005</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <div class="flex flex-col">
                             <span class="font-medium">Netflix</span>
-                            <span class="text-sm text-gray-500">1 bulan</span>
+                            <span class="text-xs text-gray-500">1 bulan</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">20 September 2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">23 September 2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 167.568</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">4 member</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 41.892</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 15.740</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">57.740</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">20 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">23 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 167.568</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">4 member</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 41.892</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 15.740</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">57.740</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
                         <span
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">PAID</span>
+                            class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">PAID</span>
                     </td>
-                    <td class="px-6 py-4 text-sm text-gray-900 min-w-[640px] whitespace-normal break-words">
+                    <td class="px-3 lg:px-6 py-4 text-xs text-gray-900 min-w-[300px] whitespace-normal break-words">
                         <a href="#"
                             class="text-green-700 hover:text-green-800 break-words">http://localhost/seakun_new/mobile/invoice2.php?invoice_code=a804934e-5241-41e9-9c27-479013b65784</a>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">PRE ORDER</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">PRE ORDER</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
                         <a href="index.php?page=account-tambah"
-                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                            class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
                             <i class="fas fa-user-plus mr-1"></i>Buat Akun
                         </a>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <button
-                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">Lanjut</button>
+                            class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">Lanjut</button>
                     </td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">2</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">2</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <span class="font-medium text-gray-800">INV #141</span>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <div class="flex flex-col">
                             <span class="font-medium">Ahmad Rizki</span>
-                            <span class="text-sm text-gray-500">ahmad@example.com</span>
-                            <span class="text-sm text-gray-500">628177777777</span>
+                            <span class="text-xs text-gray-500">ahmad@example.com</span>
+                            <span class="text-xs text-gray-500">628177777777</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <div class="flex flex-col">
                             <span class="font-medium">YouTube Premium</span>
-                            <span class="text-sm text-gray-500">3 bulan</span>
+                            <span class="text-xs text-gray-500">3 bulan</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">21 September 2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">24 September 2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 186.000</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">5 member</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 37.200</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 18.000</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">55.200</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">21 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">24 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 186.000</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">5 member</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 37.200</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 18.000</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">55.200</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
                         <span
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">PENDING</span>
+                            class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">PENDING</span>
                     </td>
-                    <td class="px-6 py-4 text-sm text-gray-900 min-w-[640px] whitespace-normal break-words">
+                    <td class="px-3 lg:px-6 py-4 text-xs text-gray-900 min-w-[300px] whitespace-normal break-words">
                         <a href="#"
                             class="text-green-700 hover:text-green-800 break-words">http://localhost/seakun_new/mobile/invoice2.php?invoice_code=b804934e-5241-41e9-9c27-479013b65785</a>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">PRE ORDER</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">PRE ORDER</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
                         <a href="index.php?page=account-tambah"
-                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                            class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
                             <i class="fas fa-user-plus mr-1"></i>Buat Akun
                         </a>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <button
-                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">Lanjut</button>
+                            class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">Lanjut</button>
                     </td>
                 </tr>
                 <tr class="hover:bg-gray-50 transition-colors">
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">3</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">3</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <span class="font-medium text-gray-800">INV #142</span>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <div class="flex flex-col">
                             <span class="font-medium">Siti Nurhaliza</span>
-                            <span class="text-sm text-gray-500">siti@example.com</span>
-                            <span class="text-sm text-gray-500">628188888888</span>
+                            <span class="text-xs text-gray-500">siti@example.com</span>
+                            <span class="text-xs text-gray-500">628188888888</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
                         <div class="flex flex-col">
                             <span class="font-medium">Spotify Premium</span>
-                            <span class="text-sm text-gray-500">6 bulan</span>
+                            <span class="text-xs text-gray-500">6 bulan</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">19 September 2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">22 September 2024</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 186.000</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">6 member</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 31.000</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">Rp. 25.000</td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">56.000</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">19 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">22 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 186.000</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">6 member</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 31.000</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">Rp. 25.000</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">56.000</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
                         <span
-                            class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">UNPAID</span>
+                            class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">UNPAID</span>
                     </td>
-                    <td class="px-6 py-4 text-sm text-gray-900 min-w-[640px] whitespace-normal break-words">
+                    <td class="px-3 lg:px-6 py-4 text-xs text-gray-900 min-w-[300px] whitespace-normal break-words">
                         <a href="#"
                             class="text-green-700 hover:text-green-800 break-words">http://localhost/seakun_new/mobile/invoice2.php?invoice_code=c804934e-5241-41e9-9c27-479013b65786</a>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">PRE ORDER</td>
-                    <td class="px-6 py-4 whitespace-nowrap">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-xs text-gray-900">PRE ORDER</td>
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
                         <a href="index.php?page=account-tambah"
-                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                            class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
                             <i class="fas fa-user-plus mr-1"></i>Buat Akun
                         </a>
                     </td>
-                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm font-medium">
                         <button
-                            class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">Lanjut</button>
+                            class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">Lanjut</button>
                     </td>
                 </tr>
             </tbody>
         </table>
     </div>
 
+    <!-- Mobile Card View -->
+    <div class="lg:hidden space-y-4 p-4">
+        <!-- Card 1 -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
+            <div class="flex justify-between items-start mb-3">
+                <div>
+                    <h3 class="font-semibold text-gray-900">INV #140</h3>
+                    <p class="text-sm text-gray-600">#1</p>
+                </div>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">PAID</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <div>
+                    <span class="text-xs text-gray-500">Customer:</span>
+                    <p class="text-sm font-medium">Sopipi</p>
+                    <p class="text-xs text-gray-500">sopipi@gmail.com</p>
+                    <p class="text-xs text-gray-500">6281997930005</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Produk:</span>
+                    <p class="text-sm font-medium">Netflix - 1 bulan</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Tanggal Pesan:</span>
+                        <p class="font-medium">20 Sep 2024</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tanggal Expired:</span>
+                        <p class="font-medium">23 Sep 2024</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Harga Provider:</span>
+                        <p class="font-medium">Rp. 167.568</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Jumlah Member:</span>
+                        <p class="font-medium">4 member</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Harga Satuan:</span>
+                        <p class="font-medium">Rp. 41.892</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Biaya:</span>
+                        <p class="font-medium">Rp. 15.740</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Satuan Total:</span>
+                    <p class="text-sm font-medium">57.740</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Status:</span>
+                    <p class="text-sm font-medium">PRE ORDER</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Link Pembayaran:</span>
+                    <a href="#" class="text-green-700 hover:text-green-800 text-xs break-all">http://localhost/seakun_new/mobile/invoice2.php?invoice_code=a804934e-5241-41e9-9c27-479013b65784</a>
+                </div>
+            </div>
+            
+            <div class="flex gap-2 pt-3 border-t border-gray-200">
+                <a href="index.php?page=account-tambah" class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                    <i class="fas fa-user-plus mr-1"></i>Buat Akun
+                </a>
+                <button class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                    Lanjut
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
+            <div class="flex justify-between items-start mb-3">
+                <div>
+                    <h3 class="font-semibold text-gray-900">INV #141</h3>
+                    <p class="text-sm text-gray-600">#2</p>
+                </div>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">PENDING</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <div>
+                    <span class="text-xs text-gray-500">Customer:</span>
+                    <p class="text-sm font-medium">Ahmad Rizki</p>
+                    <p class="text-xs text-gray-500">ahmad@example.com</p>
+                    <p class="text-xs text-gray-500">628177777777</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Produk:</span>
+                    <p class="text-sm font-medium">YouTube Premium - 3 bulan</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Tanggal Pesan:</span>
+                        <p class="font-medium">21 Sep 2024</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tanggal Expired:</span>
+                        <p class="font-medium">24 Sep 2024</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Harga Provider:</span>
+                        <p class="font-medium">Rp. 186.000</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Jumlah Member:</span>
+                        <p class="font-medium">5 member</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Harga Satuan:</span>
+                        <p class="font-medium">Rp. 37.200</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Biaya:</span>
+                        <p class="font-medium">Rp. 18.000</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Satuan Total:</span>
+                    <p class="text-sm font-medium">55.200</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Status:</span>
+                    <p class="text-sm font-medium">PRE ORDER</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Link Pembayaran:</span>
+                    <a href="#" class="text-green-700 hover:text-green-800 text-xs break-all">http://localhost/seakun_new/mobile/invoice2.php?invoice_code=b804934e-5241-41e9-9c27-479013b65785</a>
+                </div>
+            </div>
+            
+            <div class="flex gap-2 pt-3 border-t border-gray-200">
+                <a href="index.php?page=account-tambah" class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                    <i class="fas fa-user-plus mr-1"></i>Buat Akun
+                </a>
+                <button class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                    Lanjut
+                </button>
+            </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
+            <div class="flex justify-between items-start mb-3">
+                <div>
+                    <h3 class="font-semibold text-gray-900">INV #142</h3>
+                    <p class="text-sm text-gray-600">#3</p>
+                </div>
+                <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-red-100 text-red-800">UNPAID</span>
+            </div>
+            
+            <div class="space-y-2 mb-4">
+                <div>
+                    <span class="text-xs text-gray-500">Customer:</span>
+                    <p class="text-sm font-medium">Siti Nurhaliza</p>
+                    <p class="text-xs text-gray-500">siti@example.com</p>
+                    <p class="text-xs text-gray-500">628188888888</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Produk:</span>
+                    <p class="text-sm font-medium">Spotify Premium - 6 bulan</p>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Tanggal Pesan:</span>
+                        <p class="font-medium">19 Sep 2024</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Tanggal Expired:</span>
+                        <p class="font-medium">22 Sep 2024</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Harga Provider:</span>
+                        <p class="font-medium">Rp. 186.000</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Jumlah Member:</span>
+                        <p class="font-medium">6 member</p>
+                    </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-2 text-xs">
+                    <div>
+                        <span class="text-gray-500">Harga Satuan:</span>
+                        <p class="font-medium">Rp. 31.000</p>
+                    </div>
+                    <div>
+                        <span class="text-gray-500">Biaya:</span>
+                        <p class="font-medium">Rp. 25.000</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Satuan Total:</span>
+                    <p class="text-sm font-medium">56.000</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Status:</span>
+                    <p class="text-sm font-medium">PRE ORDER</p>
+                </div>
+                
+                <div>
+                    <span class="text-xs text-gray-500">Link Pembayaran:</span>
+                    <a href="#" class="text-green-700 hover:text-green-800 text-xs break-all">http://localhost/seakun_new/mobile/invoice2.php?invoice_code=c804934e-5241-41e9-9c27-479013b65786</a>
+                </div>
+            </div>
+            
+            <div class="flex gap-2 pt-3 border-t border-gray-200">
+                <a href="index.php?page=account-tambah" class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                    <i class="fas fa-user-plus mr-1"></i>Buat Akun
+                </a>
+                <button class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                    Lanjut
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
     <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+        <!-- Mobile Pagination -->
         <div class="flex-1 flex justify-between sm:hidden">
             <a href="#"
-                class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Previous</a>
+                class="relative inline-flex items-center px-3 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                <i class="fas fa-chevron-left mr-1"></i>Previous
+            </a>
             <a href="#"
-                class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Next</a>
+                class="ml-3 relative inline-flex items-center px-3 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">
+                Next<i class="fas fa-chevron-right ml-1"></i>
+            </a>
         </div>
+        
+        <!-- Desktop Pagination -->
         <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
             <div>
                 <p class="text-sm text-gray-700">
@@ -214,5 +461,49 @@
                 </nav>
             </div>
         </div>
+        
+        <!-- Mobile Info -->
+        <div class="sm:hidden text-center w-full mt-2">
+            <p class="text-xs text-gray-500">
+                Menampilkan 1-3 dari 3 hasil
+            </p>
+        </div>
     </div>
 </div>
+<script>
+    (function() {
+        const input = document.getElementById('table-search');
+        const tbody = document.getElementById('preorder-tbody');
+        const mobileCards = document.querySelector('.lg\\:hidden');
+        
+        if (!input) return;
+
+        // Get desktop table rows
+        const desktopRows = tbody ? Array.from(tbody.querySelectorAll('tr')) : [];
+        
+        // Get mobile cards
+        const mobileCardElements = mobileCards ? Array.from(mobileCards.querySelectorAll('.bg-white.border')) : [];
+
+        function filter(query) {
+            const q = (query || '').toLowerCase().trim();
+            
+            // Filter desktop table rows
+            desktopRows.forEach(row => {
+                const match = row.textContent.toLowerCase().includes(q);
+                row.classList.toggle('hidden', !match);
+            });
+            
+            // Filter mobile cards
+            mobileCardElements.forEach(card => {
+                const match = card.textContent.toLowerCase().includes(q);
+                card.classList.toggle('hidden', !match);
+            });
+        }
+
+        let t;
+        input.addEventListener('input', e => {
+            clearTimeout(t);
+            t = setTimeout(() => filter(e.target.value), 120);
+        });
+    })();
+</script>
