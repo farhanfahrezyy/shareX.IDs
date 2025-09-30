@@ -1,81 +1,162 @@
-<!-- Waiting List Page -->
+<!-- Aktif Page -->
 <div class="bg-white rounded-lg shadow-sm animate-fade-in">
-  <div class="px-6 py-4 border-b border-gray-200">
+  <div class="px-4 sm:px-6 py-4 border-b border-gray-200">
     <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-      <h1 class="text-xl font-semibold text-gray-800">Waiting List</h1>
-      <div class="mt-4 sm:mt-0 flex flex-wrap gap-2">
-        <button onclick="handleAddToGroup()" class="inline-flex items-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
-          <i class="fas fa-plus mr-2"></i>Tambah ke Group
-        </button>
+      <h1 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-0">Aktif</h1>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <div class="w-full sm:w-64">
+          <input id="aktif-search" type="search" placeholder="Cari aktif..." aria-label="Cari aktif"
+              class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm">
+        </div>
+        <!-- <a href="#" data-back class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">
+          <i class="fas fa-arrow-left mr-2"></i>Kembali
+        </a> -->
+        
       </div>
     </div>
   </div>
 
-  <div class="overflow-x-auto">
-    <table class="w-full divide-y divide-gray-200">
+  <!-- Desktop Table -->
+  <div class="hidden lg:block overflow-x-auto">
+    <table class="w-full divide-y divide-gray-200 min-w-[1600px]">
       <thead class="bg-gray-50">
         <tr>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[60px]">No.</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Invoice Number</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[240px]">Customer</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[200px]">Produk</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Tanggal Pesan</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Tanggal Expired</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Harga Provider</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[140px]">Jumlah Member</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Harga Satuan</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[140px]">Biaya</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Satuan Total</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[180px]">Status Pembayaran</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[320px]">Link Pembayaran</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Status</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Akun</th>
-          <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-center min-w-[300px]">Actions</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">No.</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[140px]">Invoice Number</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[220px]">Customer</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[180px]">Produk</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[130px]">Tanggal Pesan</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[130px]">Tanggal Expired</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[140px]">Harga Provider</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[130px]">Jumlah Member</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[130px]">Harga Satuan</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[110px]">Biaya</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[130px]">Satuan Total</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Status Pembayaran</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[300px]">Link Pembayaran</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[110px]">Status</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[140px]">Akun</th>
+          <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-center min-w-[240px]">Actions</th>
         </tr>
       </thead>
 
-      <tbody class="bg-white divide-y divide-gray-200">
+      <tbody id="aktif-tbody" class="bg-white divide-y divide-gray-200">
         <!-- Row 1 -->
         <tr class="hover:bg-gray-50">
-          <td class="px-6 py-4 text-sm text-center">1</td>
-          <td class="px-6 py-4 text-sm font-medium">INV #WL-001</td>
-          <td class="px-6 py-4 text-sm">
+          <td class="px-3 lg:px-6 py-4 text-sm text-center">1</td>
+          <td class="px-3 lg:px-6 py-4 text-sm font-medium min-w-[140px]">INV #AK-001</td>
+          <td class="px-3 lg:px-6 py-4 text-sm min-w-[220px]">
             <div class="flex flex-col">
               <span class="font-medium">Sopipi</span>
-              <span class="text-sm text-gray-500">sopipi@gmail.com</span>
-              <span class="text-sm text-gray-500">6281997930005</span>
+              <span class="text-xs text-gray-500">sopipi@gmail.com</span>
+              <span class="text-xs text-gray-500">6281997930005</span>
             </div>
           </td>
-          <td class="px-6 py-4 text-sm">Netflix - 1 Bulan</td>
-          <td class="px-6 py-4 text-sm">20 September 2024</td>
-          <td class="px-6 py-4 text-sm">23 September 2024</td>
-          <td class="px-6 py-4 text-sm">Rp. 167.568</td>
-          <td class="px-6 py-4 text-sm">4 member</td>
-          <td class="px-6 py-4 text-sm">Rp. 41.892</td>
-          <td class="px-6 py-4 text-sm">Rp. 15.740</td>
-          <td class="px-6 py-4 text-sm">57.740</td>
-          <td class="px-6 py-4 text-sm">
-            <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">PAID</span>
+          <td class="px-3 lg:px-6 py-4 text-xs min-w-[180px]">Netflix - 1 Bulan</td>
+          <td class="px-3 lg:px-6 py-4 text-xs">20 Sep 2024</td>
+          <td class="px-3 lg:px-6 py-4 text-xs">23 Sep 2024</td>
+          <td class="px-3 lg:px-6 py-4 text-xs">Rp. 167.568</td>
+          <td class="px-3 lg:px-6 py-4 text-xs">4 member</td>
+          <td class="px-3 lg:px-6 py-4 text-xs">Rp. 41.892</td>
+          <td class="px-3 lg:px-6 py-4 text-xs">Rp. 15.740</td>
+          <td class="px-3 lg:px-6 py-4 text-xs">57.740</td>
+          <td class="px-3 lg:px-6 py-4 text-sm">
+            <span class="px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded-full">PAID</span>
           </td>
-          <td class="px-6 py-4 text-sm text-green-700 break-words">
+          <td class="px-3 lg:px-6 py-4 text-xs text-green-700 min-w-[300px] whitespace-normal break-words">
             <a href="#" class="hover:underline">http://localhost/invoice/001</a>
           </td>
-          <td class="px-6 py-4 text-sm">WAITING LIST</td>
-          <td class="px-6 py-4 text-sm">
-            <button class="px-3 py-1 bg-green-600 text-white text-sm rounded-md hover:bg-green-700">
+          <td class="px-3 lg:px-6 py-4 text-xs">AKTIF</td>
+          <td class="px-3 lg:px-6 py-4 text-sm min-w-[140px]">
+            <button class="px-2 py-1 bg-green-600 text-white text-xs rounded-md hover:bg-green-700 w-full sm:w-auto">
               <i class="fas fa-user-plus mr-1"></i>Buat Akun
             </button>
           </td>
-          <td class="px-6 py-4 text-sm text-center">
-            <div class="flex justify-center flex-wrap gap-2">
-              <button onclick="openModal('uploadModal')" class="px-3 py-1 bg-blue-600 text-white text-sm rounded-md hover:bg-blue-700">Upload Bukti</button>
-              <button onclick="openModal('editGroupModal')" class="px-3 py-1 bg-yellow-600 text-white text-sm rounded-md hover:bg-yellow-700">Edit Group</button>
-              <button onclick="openModal('doneModal')" class="px-3 py-1 bg-gray-600 text-white text-sm rounded-md hover:bg-gray-700">Done</button>
+          <td class="px-3 lg:px-6 py-4 text-sm text-center min-w-[240px]">
+            <div class="flex justify-center flex-wrap gap-2 w-full">
+              <button onclick="openModal('uploadModal')" class="inline-flex items-center justify-center px-3 py-2 bg-blue-600 text-white text-xs rounded-md hover:bg-blue-700 min-w-[88px]">Upload</button>
+              <button onclick="openModal('editGroupModal')" class="inline-flex items-center justify-center px-3 py-2 bg-yellow-600 text-white text-xs rounded-md hover:bg-yellow-700 min-w-[88px]">Edit</button>
+              <button onclick="openModal('doneModal')" class="inline-flex items-center justify-center px-3 py-2 bg-gray-600 text-white text-xs rounded-md hover:bg-gray-700 min-w-[88px]">Done</button>
             </div>
           </td>
         </tr>
       </tbody>
     </table>
+  </div>
+
+  <!-- Mobile Card View -->
+  <div class="lg:hidden space-y-4 p-4">
+    <div class="bg-white border border-gray-200 rounded-lg shadow-sm p-4">
+      <div class="flex justify-between items-start mb-3">
+        <div>
+          <h3 class="font-semibold text-gray-900">INV #AK-001</h3>
+          <p class="text-sm text-gray-600">#1</p>
+        </div>
+        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">PAID</span>
+      </div>
+
+      <div class="space-y-2 mb-4">
+        <div>
+          <span class="text-xs text-gray-500">Customer:</span>
+          <p class="text-sm font-medium">Sopipi</p>
+          <p class="text-xs text-gray-500">sopipi@gmail.com</p>
+          <p class="text-xs text-gray-500">6281997930005</p>
+        </div>
+        <div>
+          <span class="text-xs text-gray-500">Produk:</span>
+          <p class="text-sm font-medium">Netflix - 1 Bulan</p>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div>
+            <span class="text-gray-500">Tanggal Pesan:</span>
+            <p class="font-medium">20 Sep 2024</p>
+          </div>
+          <div>
+            <span class="text-gray-500">Tanggal Expired:</span>
+            <p class="font-medium">23 Sep 2024</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div>
+            <span class="text-gray-500">Harga Provider:</span>
+            <p class="font-medium">Rp. 167.568</p>
+          </div>
+          <div>
+            <span class="text-gray-500">Jumlah Member:</span>
+            <p class="font-medium">4 member</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-2 text-xs">
+          <div>
+            <span class="text-gray-500">Harga Satuan:</span>
+            <p class="font-medium">Rp. 41.892</p>
+          </div>
+          <div>
+            <span class="text-gray-500">Biaya:</span>
+            <p class="font-medium">Rp. 15.740</p>
+          </div>
+        </div>
+        <div>
+          <span class="text-xs text-gray-500">Satuan Total:</span>
+          <p class="text-sm font-medium">57.740</p>
+        </div>
+        <div>
+          <span class="text-xs text-gray-500">Status:</span>
+          <p class="text-sm font-medium">AKTIF</p>
+        </div>
+        <div>
+          <span class="text-xs text-gray-500">Link Pembayaran:</span>
+          <a href="#" class="text-green-700 hover:text-green-800 text-xs break-all">http://localhost/invoice/001</a>
+        </div>
+      </div>
+
+      <div class="flex gap-2 pt-3 border-t border-gray-200">
+        <button class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+          <i class="fas fa-user-plus mr-1"></i>Buat Akun
+        </button>
+        <button onclick="openModal('uploadModal')" class="flex-1 inline-flex items-center justify-center px-3 py-2 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition-colors">Upload</button>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -126,4 +207,29 @@
   function closeModal(id) {
     document.getElementById(id).classList.add("hidden");
   }
+</script>
+
+<!-- Search Script -->
+<script>
+(function() {
+    const input = document.getElementById('aktif-search');
+    const tbody = document.getElementById('aktif-tbody');
+    if (!input || !tbody) return;
+
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    function filter(query) {
+        const q = (query || '').toLowerCase().trim();
+        rows.forEach(row => {
+            const match = row.textContent.toLowerCase().includes(q);
+            row.classList.toggle('hidden', !match);
+        });
+    }
+
+    let t;
+    input.addEventListener('input', e => {
+        clearTimeout(t);
+        t = setTimeout(() => filter(e.target.value), 120);
+    });
+})();
 </script>

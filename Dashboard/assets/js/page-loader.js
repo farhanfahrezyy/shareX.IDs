@@ -38,6 +38,13 @@ class PageLoader {
                 'kategori-provider-edit': 'provider/kategori-provider-edit.html',
                 'kategori-provider-delete': 'provider/kategori-provider-delete.html',
                 'provider': 'provider/provider.html',
+                'provider-paket': 'provider/provider-paket.html',
+                'provider-produk': 'provider/provider-produk.html',
+                'provider-produk-tambah': 'provider/provider-produk-tambah.html',
+                'provider-produk-edit': 'provider/provider-produk-edit.html',
+                'paket-benefit': 'provider/paket-benefit.html',
+                'paket-informasi': 'provider/paket-informasi.html',
+                'paket-skema': 'provider/paket-skema.html',
                 'employee': 'employee/employee.html'
             };
 

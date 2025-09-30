@@ -3,7 +3,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar"
-        class="w-72 lg:w-64 bg-white shadow-xl fixed inset-y-0 left-0 lg:relative z-50 overflow-y-auto transform transition-transform duration-300 ease-in-out lg:translate-x-0 -translate-x-full lg:shadow-lg">
+        class="w-64 bg-white shadow-xl fixed inset-y-0 left-0 z-50 overflow-y-auto h-screen transform transition-transform duration-300 ease-in-out lg:translate-x-0 -translate-x-full lg:shadow-lg">
         
         <div class="p-6 bg-gradient-to-r from-green-500 to-green-700">
             <div class="flex items-center justify-between">
@@ -103,6 +103,14 @@
                         <a href="?page=provider"
                             class="block px-3 py-2 text-sm text-gray-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-colors">
                             <i class="fas fa-circle text-xs mr-2"></i>Provider
+                        </a>
+                        <a href="?page=provider-paket"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-colors">
+                            <i class="fas fa-circle text-xs mr-2"></i>Daftar Paket
+                        </a>
+                        <a href="?page=provider-produk"
+                            class="block px-3 py-2 text-sm text-gray-600 hover:bg-green-50 hover:text-green-700 rounded-lg transition-colors">
+                            <i class="fas fa-circle text-xs mr-2"></i>Daftar Produk Paket
                         </a>
                     </div>
                 </div>

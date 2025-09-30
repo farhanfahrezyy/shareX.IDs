@@ -1,0 +1,175 @@
+<!-- Paket Skema Berlangganan Form - Updated: 2025-01-29 -->
+<div class="max-w-4xl mx-auto p-4 lg:p-6">
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 animate-fade-in">
+        <div class="px-6 py-4 border-b border-gray-200">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-xl font-semibold text-gray-800">Kelola Skema Berlangganan</h1>
+                    <p class="text-sm text-gray-600 mt-2">Netflix Premium 4K - Kelola skema pembayaran dan berlangganan</p>
+                </div>
+                <a href="index.php?page=provider" class="inline-flex items-center px-3 py-2 bg-gray-100 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-200 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Kembali
+                </a>
+            </div>
+        </div>
+
+        <div class="p-6">
+            <!-- Existing Subscription Schemes -->
+            <div class="mb-8">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Skema Berlangganan yang Tersedia</h3>
+                <div class="space-y-4">
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-md font-medium text-gray-900">Skema Bulanan</h4>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Aktif
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div>
+                                <span class="text-gray-500">Harga:</span>
+                                <p class="font-medium">Rp 186.000</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500">Durasi:</span>
+                                <p class="font-medium">1 Bulan</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500">Diskon:</span>
+                                <p class="font-medium">0%</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500">Status:</span>
+                                <p class="font-medium text-green-600">Aktif</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mt-3">
+                            <button class="inline-flex items-center px-2 py-1 bg-yellow-600 text-white text-xs font-medium rounded-md hover:bg-yellow-700 transition-colors">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </button>
+                            <button class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                                <i class="fas fa-trash mr-1"></i>Hapus
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <div class="flex items-center justify-between mb-3">
+                            <h4 class="text-md font-medium text-gray-900">Skema 3 Bulanan</h4>
+                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                                Aktif
+                            </span>
+                        </div>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
+                            <div>
+                                <span class="text-gray-500">Harga:</span>
+                                <p class="font-medium">Rp 520.000</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500">Durasi:</span>
+                                <p class="font-medium">3 Bulan</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500">Diskon:</span>
+                                <p class="font-medium">7%</p>
+                            </div>
+                            <div>
+                                <span class="text-gray-500">Status:</span>
+                                <p class="font-medium text-green-600">Aktif</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-2 mt-3">
+                            <button class="inline-flex items-center px-2 py-1 bg-yellow-600 text-white text-xs font-medium rounded-md hover:bg-yellow-700 transition-colors">
+                                <i class="fas fa-edit mr-1"></i>Edit
+                            </button>
+                            <button class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                                <i class="fas fa-trash mr-1"></i>Hapus
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add New Subscription Scheme Form -->
+            <div class="border-t border-gray-200 pt-6">
+                <h3 class="text-lg font-medium text-gray-900 mb-4">Tambah Skema Berlangganan Baru</h3>
+                <form class="space-y-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Nama Skema</label>
+                            <input type="text" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Contoh: Skema 6 Bulanan">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Durasi (bulan)</label>
+                            <input type="number" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="6">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Harga Total</label>
+                            <input type="number" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="1000000">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Persentase Diskon</label>
+                            <input type="number" min="0" max="100" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="15">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Metode Pembayaran</label>
+                            <select class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="">Pilih Metode</option>
+                                <option value="full">Bayar Penuh</option>
+                                <option value="installment">Cicilan</option>
+                                <option value="subscription">Berlangganan</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Status</label>
+                            <select class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="active">Aktif</option>
+                                <option value="inactive">Tidak Aktif</option>
+                                <option value="coming_soon">Coming Soon</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Deskripsi Skema</label>
+                        <textarea rows="3" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Jelaskan detail skema berlangganan ini..."></textarea>
+                    </div>
+                    
+                    <!-- Payment Terms -->
+                    <div class="border border-gray-200 rounded-lg p-4">
+                        <h4 class="text-md font-medium text-gray-900 mb-3">Ketentuan Pembayaran</h4>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Grace Period (hari)</label>
+                                <input type="number" value="3" class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-1">Auto Renewal</label>
+                                <select class="w-full border border-gray-300 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option value="yes">Ya</option>
+                                    <option value="no">Tidak</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-end gap-2 pt-4">
+                        <button type="button" class="inline-flex items-center px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-700 bg-white hover:bg-gray-50">
+                            Batal
+                        </button>
+                        <button type="submit" class="inline-flex items-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
+                            <i class="fas fa-plus mr-2"></i>Tambah Skema
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -8,6 +8,19 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize navigation
     initializeNavigation();
+
+    // Wire back buttons (data-back)
+    document.querySelectorAll('[data-back]').forEach(btn => {
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+            if (history.length > 1) {
+                history.back();
+            } else {
+                // Fallback to default dashboard
+                window.location.href = 'index.php?page=waiting-list';
+            }
+        });
+    });
 });
 
 // Sidebar functionality

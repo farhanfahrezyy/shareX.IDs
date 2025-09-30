@@ -35,7 +35,7 @@ require_once __DIR__ . '/components/header.php';
         <?php require_once __DIR__ . '/components/sidebar.php'; ?>
 
         <!-- Main -->
-        <div class="flex-1 flex flex-col overflow-hidden lg:ml-0 ml-0 w-full max-w-full">
+        <div class="flex-1 flex flex-col overflow-hidden lg:ml-64 w-full max-w-full">
             <?php require_once __DIR__ . '/components/topbar.php'; ?>
 
             <main class="flex-1 overflow-y-auto pt-16 lg:pt-0 overflow-x-hidden">

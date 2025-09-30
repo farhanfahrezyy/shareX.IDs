@@ -1,10 +1,13 @@
 <!-- Groups Page -->
 <div class="bg-white rounded-lg shadow-sm animate-fade-in">
-    <div class="px-6 py-4 border-b border-gray-200">
+    <div class="px-4 sm:px-6 py-4 border-b border-gray-200">
       <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-        <h1 class="text-xl font-semibold text-gray-800">Groups</h1>
-        <div class="mt-4 sm:mt-0 flex flex-wrap gap-2">
-          <!-- Buat Group Baru -->
+        <h1 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-0">Groups</h1>
+        <div class="flex flex-col sm:flex-row gap-2">
+          <div class="w-full sm:w-64">
+            <input id="groups-search" type="search" placeholder="Cari group..." aria-label="Cari group"
+                class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm">
+          </div>
           <a href="index.php?page=group-tambah"
              class="inline-flex items-center px-3 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
             <i class="fas fa-plus mr-2"></i>Buat Group Baru
@@ -13,68 +16,69 @@
       </div>
     </div>
     
+    <!-- Table View -->
     <div class="overflow-x-auto">
-      <table class="w-full divide-y divide-gray-200">
+      <table class="w-full divide-y divide-gray-200 min-w-[800px]">
         <thead class="bg-gray-50">
           <tr>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Group</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produk</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Akun Host</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Member</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
+            <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">No.</th>
+            <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama Group</th>
+            <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Produk</th>
+            <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Akun Host</th>
+            <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Member</th>
+            <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+            <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Actions</th>
           </tr>
         </thead>
-        <tbody class="bg-white divide-y divide-gray-200">
+        <tbody id="groups-tbody" class="bg-white divide-y divide-gray-200">
           
           <!-- Row 1 -->
           <tr class="hover:bg-gray-50 transition-colors">
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">1</td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">1</td>
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <a href="index.php?page=group-detail" class="font-medium text-blue-600 hover:underline">
                 Netflix User Host TV #3
               </a>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <div class="flex flex-col">
                 <span class="font-medium">Netflix</span>
-                <span class="text-sm text-gray-500">1 bulan</span>
+                <span class="text-xs text-gray-500">1 bulan</span>
               </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <div class="flex flex-col">
                 <span class="font-medium">host@netflix.com</span>
-                <span class="text-sm text-gray-500">password123</span>
+                <span class="text-xs text-gray-500">password123</span>
               </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                 3/4 Member
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                 ACTIVE
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-              <div class="flex flex-wrap gap-2">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm font-medium">
+              <div class="flex flex-wrap gap-1">
                 <a href="index.php?page=group-member"
-                   class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
-                  <i class="fas fa-users mr-1"></i>Daftar Member
+                   class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
+                  <i class="fas fa-users mr-1"></i>Member
                 </a>
                 <a href="index.php?page=group-host-tambah"
-                   class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
-                  <i class="fas fa-plus mr-1"></i>Tambah Akun Host
+                   class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
+                  <i class="fas fa-plus mr-1"></i>Host
                 </a>
                 <a href="index.php?page=group-edit"
-                   class="inline-flex items-center px-3 py-1 bg-yellow-600 text-white text-sm font-medium rounded-md hover:bg-yellow-700 transition-colors">
+                   class="inline-flex items-center px-2 py-1 bg-yellow-600 text-white text-xs font-medium rounded-md hover:bg-yellow-700 transition-colors">
                   <i class="fas fa-edit mr-1"></i>Edit
                 </a>
                 <a href="index.php?page=group-delete"
-                   class="inline-flex items-center px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors">
-                  <i class="fas fa-trash mr-1"></i>Delete
+                   class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                  <i class="fas fa-trash mr-1"></i>Del
                 </a>
               </div>
             </td>
@@ -82,47 +86,47 @@
   
           <!-- Row 2 -->
           <tr class="hover:bg-gray-50 transition-colors">
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">2</td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">2</td>
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <a href="index.php?page=group-detail" class="font-medium text-blue-600 hover:underline">
                 Spotify Premium #5
               </a>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <div class="flex flex-col">
                 <span class="font-medium">Spotify</span>
-                <span class="text-sm text-gray-500">6 bulan</span>
+                <span class="text-xs text-gray-500">6 bulan</span>
               </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <div class="flex flex-col">
                 <span class="font-medium">host@spotify.com</span>
-                <span class="text-sm text-gray-500">music123</span>
+                <span class="text-xs text-gray-500">music123</span>
               </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                 5/5 Member
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
                 FULL
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-              <div class="flex flex-wrap gap-2">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm font-medium">
+              <div class="flex flex-wrap gap-1">
                 <a href="index.php?page=group-member"
-                   class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
-                  <i class="fas fa-users mr-1"></i>Daftar Member
+                   class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
+                  <i class="fas fa-users mr-1"></i>Member
                 </a>
                 <a href="index.php?page=group-edit"
-                   class="inline-flex items-center px-3 py-1 bg-yellow-600 text-white text-sm font-medium rounded-md hover:bg-yellow-700 transition-colors">
+                   class="inline-flex items-center px-2 py-1 bg-yellow-600 text-white text-xs font-medium rounded-md hover:bg-yellow-700 transition-colors">
                   <i class="fas fa-edit mr-1"></i>Edit
                 </a>
                 <a href="index.php?page=group-delete"
-                   class="inline-flex items-center px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors">
-                  <i class="fas fa-trash mr-1"></i>Delete
+                   class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                  <i class="fas fa-trash mr-1"></i>Del
                 </a>
               </div>
             </td>
@@ -130,51 +134,51 @@
   
           <!-- Row 3 -->
           <tr class="hover:bg-gray-50 transition-colors">
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">3</td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">3</td>
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <a href="index.php?page=group-detail" class="font-medium text-blue-600 hover:underline">
                 YouTube Premium #2
               </a>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <div class="flex flex-col">
                 <span class="font-medium">YouTube</span>
-                <span class="text-sm text-gray-500">3 bulan</span>
+                <span class="text-xs text-gray-500">3 bulan</span>
               </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
               <div class="flex flex-col">
                 <span class="font-medium">host@youtube.com</span>
-                <span class="text-sm text-gray-500">video123</span>
+                <span class="text-xs text-gray-500">video123</span>
               </div>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
                 2/6 Member
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-              <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap">
+              <span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                 ACTIVE
               </span>
             </td>
-            <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
-              <div class="flex flex-wrap gap-2">
+            <td class="px-3 lg:px-6 py-4 whitespace-nowrap text-sm font-medium">
+              <div class="flex flex-wrap gap-1">
                 <a href="index.php?page=group-member"
-                   class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
-                  <i class="fas fa-users mr-1"></i>Daftar Member
+                   class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
+                  <i class="fas fa-users mr-1"></i>Member
                 </a>
                 <a href="index.php?page=group-host-tambah"
-                   class="inline-flex items-center px-3 py-1 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 transition-colors">
-                  <i class="fas fa-plus mr-1"></i>Tambah Akun Host
+                   class="inline-flex items-center px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 transition-colors">
+                  <i class="fas fa-plus mr-1"></i>Host
                 </a>
                 <a href="index.php?page=group-edit"
-                   class="inline-flex items-center px-3 py-1 bg-yellow-600 text-white text-sm font-medium rounded-md hover:bg-yellow-700 transition-colors">
+                   class="inline-flex items-center px-2 py-1 bg-yellow-600 text-white text-xs font-medium rounded-md hover:bg-yellow-700 transition-colors">
                   <i class="fas fa-edit mr-1"></i>Edit
                 </a>
                 <a href="index.php?page=group-delete"
-                   class="inline-flex items-center px-3 py-1 bg-red-600 text-white text-sm font-medium rounded-md hover:bg-red-700 transition-colors">
-                  <i class="fas fa-trash mr-1"></i>Delete
+                   class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                  <i class="fas fa-trash mr-1"></i>Del
                 </a>
               </div>
             </td>
@@ -183,6 +187,7 @@
         </tbody>
       </table>
     </div>
+
     
     <!-- Pagination -->
     <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
@@ -200,4 +205,28 @@
       </div>
     </div>
   </div>
+
+<script>
+(function() {
+    const input = document.getElementById('groups-search');
+    const tbody = document.getElementById('groups-tbody');
+    if (!input || !tbody) return;
+
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    function filter(query) {
+        const q = (query || '').toLowerCase().trim();
+        rows.forEach(row => {
+            const match = row.textContent.toLowerCase().includes(q);
+            row.classList.toggle('hidden', !match);
+        });
+    }
+
+    let t;
+    input.addEventListener('input', e => {
+        clearTimeout(t);
+        t = setTimeout(() => filter(e.target.value), 120);
+    });
+})();
+</script>
   

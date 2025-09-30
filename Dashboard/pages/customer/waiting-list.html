@@ -1,106 +1,96 @@
 <!-- Waiting List Page -->
 <div class="bg-white rounded-lg shadow-sm animate-fade-in">
-    <div class="px-6 py-4 border-b border-gray-200">
+    <div class="px-4 sm:px-6 py-4 border-b border-gray-200">
         <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
-            <h1 class="text-xl font-semibold text-gray-800">Waiting List</h1>
-            <div class="mt-4 sm:mt-0 flex flex-wrap gap-2">
-
+            <h1 class="text-lg sm:text-xl font-semibold text-gray-800 mb-4 sm:mb-0">Waiting List</h1>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <div class="w-full sm:w-64">
+                    <input id="waiting-search" type="search" placeholder="Cari waiting list..." aria-label="Cari waiting list"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm">
+                </div>
             </div>
         </div>
     </div>
 
     <div class="overflow-x-auto">
-        <table class="w-full divide-y divide-gray-200">
+        <table class="w-full divide-y divide-gray-200 min-w-[1200px]">
             <thead class="bg-gray-50">
                 <tr>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[60px]">No.</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Invoice
-                        Number</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[240px]">Customer
-                    </th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[200px]">Produk
-                    </th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Tanggal
-                        Pesan</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Tanggal
-                        Expired</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Harga
-                        Provider</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[140px]">Jumlah
-                        Member</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Harga
-                        Satuan</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[140px]">Biaya</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Satuan
-                        Total</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[180px]">Status
-                        Pembayaran</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[320px]">Link
-                        Pembayaran</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Status
-                    </th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left min-w-[160px]">Akun</th>
-                    <th class="px-6 py-3 text-xs font-medium text-gray-500 uppercase text-center min-w-[300px]">Actions
-                    </th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">No.</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Invoice Number</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Customer</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Produk</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Tanggal Pesan</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Tanggal Expired</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Harga Provider</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Jumlah Member</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Harga Satuan</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Biaya</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Satuan Total</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Status Pembayaran</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Link Pembayaran</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Status</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-left">Akun</th>
+                    <th class="px-3 lg:px-6 py-3 text-xs font-medium text-gray-500 uppercase text-center">Actions</th>
                 </tr>
             </thead>
 
-            <tbody class="bg-white divide-y divide-gray-200">
+            <tbody id="waiting-tbody" class="bg-white divide-y divide-gray-200">
                 <!-- Row 1 -->
                 <tr class="hover:bg-gray-50">
-                    <td class="px-6 py-4 text-sm text-center">1</td>
-                    <td class="px-6 py-4 text-sm font-medium">INV #WL-001</td>
-                    <td class="px-6 py-4 text-sm">
+                    <td class="px-3 lg:px-6 py-4 text-sm text-center">1</td>
+                    <td class="px-3 lg:px-6 py-4 text-sm font-medium">INV #WL-001</td>
+                    <td class="px-3 lg:px-6 py-4 text-sm">
                         <div class="flex flex-col">
                             <span class="font-medium">Sopipi</span>
-                            <span class="text-sm text-gray-500">sopipi@gmail.com</span>
-                            <span class="text-sm text-gray-500">6281997930005</span>
+                            <span class="text-xs text-gray-500">sopipi@gmail.com</span>
+                            <span class="text-xs text-gray-500">6281997930005</span>
                         </div>
                     </td>
-                    <td class="px-6 py-4 text-sm">Netflix - 1 Bulan</td>
-                    <td class="px-6 py-4 text-sm">20 September 2024</td>
-                    <td class="px-6 py-4 text-sm">23 September 2024</td>
-                    <td class="px-6 py-4 text-sm">Rp. 167.568</td>
-                    <td class="px-6 py-4 text-sm">4 member</td>
-                    <td class="px-6 py-4 text-sm">Rp. 41.892</td>
-                    <td class="px-6 py-4 text-sm">Rp. 15.740</td>
-                    <td class="px-6 py-4 text-sm">57.740</td>
-                    <td class="px-6 py-4 text-sm">
-                        <span class="px-2 py-1 bg-green-100 text-green-800 text-xs rounded-full">PAID</span>
+                    <td class="px-3 lg:px-6 py-4 text-xs">Netflix - 1 Bulan</td>
+                    <td class="px-3 lg:px-6 py-4 text-xs">20 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 text-xs">23 Sep 2024</td>
+                    <td class="px-3 lg:px-6 py-4 text-xs">Rp. 167.568</td>
+                    <td class="px-3 lg:px-6 py-4 text-xs">4 member</td>
+                    <td class="px-3 lg:px-6 py-4 text-xs">Rp. 41.892</td>
+                    <td class="px-3 lg:px-6 py-4 text-xs">Rp. 15.740</td>
+                    <td class="px-3 lg:px-6 py-4 text-xs">57.740</td>
+                    <td class="px-3 lg:px-6 py-4 text-sm">
+                        <span class="px-2 py-0.5 bg-green-100 text-green-800 text-xs rounded-full">PAID</span>
                     </td>
-                    <td class="px-6 py-4 text-sm text-green-700 break-words">
+                    <td class="px-3 lg:px-6 py-4 text-xs text-green-700 break-words">
                         <a href="#" class="hover:underline">http://localhost/invoice/001</a>
                     </td>
-                    <td class="px-6 py-4 text-sm">WAITING LIST</td>
-                    <td class="px-6 py-4 text-sm">
-                        <button class="px-3 py-1 bg-green-600 text-white text-sm rounded-md hover:bg-green-700">
+                    <td class="px-3 lg:px-6 py-4 text-xs">WAITING LIST</td>
+                    <td class="px-3 lg:px-6 py-4 text-sm">
+                        <button class="px-2 py-1 bg-green-600 text-white text-xs rounded-md hover:bg-green-700">
                             <i class="fas fa-user-plus mr-1"></i>Buat Akun
                         </button>
                     </td>
-                    <td class="px-6 py-4 text-sm text-center">
-                        <div class="flex justify-center flex-wrap gap-2">
+                    <td class="px-3 lg:px-6 py-4 text-sm text-center">
+                        <div class="flex justify-center flex-wrap gap-1">
                             <!-- Upload Bukti -->
                             <button onclick="openModal('uploadModal')"
-                                class="inline-flex items-center px-3 py-1.5 bg-blue-600 text-white text-sm font-medium rounded-md hover:bg-blue-700 transition">
-                                <i class="fas fa-upload mr-1"></i> Upload Bukti
+                                class="inline-flex items-center px-2 py-1 bg-blue-600 text-white text-xs font-medium rounded-md hover:bg-blue-700 transition">
+                                <i class="fas fa-upload mr-1"></i> Upload
                             </button>
 
                             <!-- Edit Group -->
                             <button onclick="openModal('editGroupModal')"
-                                class="inline-flex items-center px-3 py-1.5 bg-yellow-500 text-white text-sm font-medium rounded-md hover:bg-yellow-600 transition">
-                                <i class="fas fa-edit mr-1"></i> Edit Group
+                                class="inline-flex items-center px-2 py-1 bg-yellow-500 text-white text-xs font-medium rounded-md hover:bg-yellow-600 transition">
+                                <i class="fas fa-edit mr-1"></i> Edit
                             </button>
 
                             <!-- Done -->
                             <button onclick="openModal('doneModal')"
-                                class="inline-flex items-center px-3 py-1.5 bg-gray-600 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition">
+                                class="inline-flex items-center px-2 py-1 bg-gray-600 text-white text-xs font-medium rounded-md hover:bg-gray-700 transition">
                                 <i class="fas fa-check mr-1"></i> Done
                             </button>
 
                             <!-- Tambah ke Group -->
                             <a href="index.php?page=tambah-ke-group"
-                                class="inline-flex items-center gap-1.5 px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md hover:bg-green-700 shadow-sm transition">
-                                <i class="fas fa-plus"></i> Tambah ke Group
+                                class="inline-flex items-center justify-center gap-1 px-2 py-1 bg-green-600 text-white text-xs font-medium rounded-md hover:bg-green-700 shadow-sm transition w-full sm:w-auto">
+                                <i class="fas fa-plus"></i> Tambah
                             </a>
 
                         </div>
@@ -161,4 +151,29 @@
     function closeModal(id) {
         document.getElementById(id).classList.add("hidden");
     }
+</script>
+
+<!-- Search Script -->
+<script>
+(function() {
+    const input = document.getElementById('waiting-search');
+    const tbody = document.getElementById('waiting-tbody');
+    if (!input || !tbody) return;
+
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    function filter(query) {
+        const q = (query || '').toLowerCase().trim();
+        rows.forEach(row => {
+            const match = row.textContent.toLowerCase().includes(q);
+            row.classList.toggle('hidden', !match);
+        });
+    }
+
+    let t;
+    input.addEventListener('input', e => {
+        clearTimeout(t);
+        t = setTimeout(() => filter(e.target.value), 120);
+    });
+})();
 </script>

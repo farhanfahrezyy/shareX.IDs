@@ -16,9 +16,6 @@ $title = $title ?? $breadcrumb;
           <h1 class="text-base sm:text-lg font-semibold text-gray-900 truncate">
             <?= htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?>
           </h1>
-          <span class="text-xs sm:text-sm text-gray-500 truncate">
-            <?= htmlspecialchars($breadcrumb, ENT_QUOTES, 'UTF-8'); ?>
-          </span>
         </div>
       </div>
 

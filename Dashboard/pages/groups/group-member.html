@@ -1,32 +1,182 @@
-<!-- Group Member -->
-<div class="bg-white rounded-lg shadow-sm p-6 animate-fade-in">
-    <h2 class="text-xl font-semibold text-gray-800 mb-4">Daftar Member - Netflix User Host TV #3</h2>
-    <table class="w-full divide-y divide-gray-200">
-      <thead class="bg-gray-50">
-        <tr>
-          <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">No.</th>
-          <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Nama</th>
-          <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Email</th>
-          <th class="px-4 py-2 text-left text-sm font-medium text-gray-500">Status</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="px-4 py-2">1</td>
-          <td class="px-4 py-2">Andi</td>
-          <td class="px-4 py-2">andi@example.com</td>
-          <td class="px-4 py-2 text-green-600">ACTIVE</td>
-        </tr>
-        <tr>
-          <td class="px-4 py-2">2</td>
-          <td class="px-4 py-2">Budi</td>
-          <td class="px-4 py-2">budi@example.com</td>
-          <td class="px-4 py-2 text-yellow-600">Pending</td>
-        </tr>
-      </tbody>
-    </table>
-    <div class="mt-6">
-      <a href="index.php?page=groups" class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">Kembali</a>
+<!-- Group Member Page - Updated: 2025-01-29 -->
+<div class="bg-white rounded-lg shadow-sm border border-gray-200 animate-fade-in">
+    <div class="px-4 sm:px-6 py-4 border-b border-gray-200">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+            <div class="mb-4 sm:mb-0">
+                <h1 class="text-lg sm:text-xl font-semibold text-gray-800">Daftar Member</h1>
+                <p class="text-sm text-gray-600 mt-2">Netflix User Host TV #3 - Menampilkan daftar member dalam group ini.</p>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-2">
+                <div class="w-full sm:w-64">
+                    <input id="member-search" type="search" placeholder="Cari member..." aria-label="Cari member"
+                        class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-green-500 text-sm">
+                </div>
+                <a href="index.php?page=groups"
+                   class="inline-flex items-center px-3 py-2 bg-gray-600 text-white text-sm font-medium rounded-md hover:bg-gray-700 transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i>Kembali
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
+    
+    <div class="overflow-x-auto">
+        <table class="w-full divide-y divide-gray-200 min-w-[600px]">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center">No.</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Nama</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Username</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                    <th class="px-3 lg:px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider text-center">Actions</th>
+                </tr>
+            </thead>
+            <tbody id="member-tbody" class="bg-white divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">1</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-8 w-8">
+                                <div class="h-8 w-8 rounded-full bg-green-100 flex items-center justify-center">
+                                    <span class="text-sm font-medium text-green-800">A</span>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-sm font-medium text-gray-900">Andi</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">andi@example.com</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">andi123</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            ACTIVE
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">
+                        <div class="flex justify-center gap-1">
+                            <button class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                                <i class="fas fa-trash mr-1"></i>Delete
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">2</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-8 w-8">
+                                <div class="h-8 w-8 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <span class="text-sm font-medium text-blue-800">B</span>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-sm font-medium text-gray-900">Budi</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">budi@example.com</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">budi456</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                            PENDING
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">
+                        <div class="flex justify-center gap-1">
+                            <button class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                                <i class="fas fa-trash mr-1"></i>Delete
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+                <tr class="hover:bg-gray-50 transition-colors">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">3</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
+                        <div class="flex items-center">
+                            <div class="flex-shrink-0 h-8 w-8">
+                                <div class="h-8 w-8 rounded-full bg-purple-100 flex items-center justify-center">
+                                    <span class="text-sm font-medium text-purple-800">C</span>
+                                </div>
+                            </div>
+                            <div class="ml-3">
+                                <div class="text-sm font-medium text-gray-900">Charlie</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">charlie@example.com</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900">charlie789</td>
+                    <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            ACTIVE
+                        </span>
+                    </td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">
+                        <div class="flex justify-center gap-1">
+                            <button class="inline-flex items-center px-2 py-1 bg-red-600 text-white text-xs font-medium rounded-md hover:bg-red-700 transition-colors">
+                                <i class="fas fa-trash mr-1"></i>Delete
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Pagination -->
+    <div class="bg-white px-4 py-3 flex items-center justify-between border-t border-gray-200 sm:px-6">
+        <div class="flex-1 flex justify-between sm:hidden">
+            <a href="#"
+                class="relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Previous</a>
+            <a href="#"
+                class="ml-3 relative inline-flex items-center px-4 py-2 border border-gray-300 text-sm font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50">Next</a>
+        </div>
+        <div class="hidden sm:flex-1 sm:flex sm:items-center sm:justify-between">
+            <div>
+                <p class="text-sm text-gray-700">
+                    Menampilkan <span class="font-medium">1</span> sampai <span class="font-medium">3</span> dari <span
+                        class="font-medium">3</span> hasil
+                </p>
+            </div>
+            <div>
+                <nav class="relative z-0 inline-flex rounded-md shadow-sm -space-x-px" aria-label="Pagination">
+                    <button disabled
+                        class="relative inline-flex items-center px-2 py-2 rounded-l-md border border-gray-300 bg-white text-sm font-medium text-gray-500 cursor-not-allowed">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button
+                        class="relative inline-flex items-center px-4 py-2 border border-gray-300 bg-blue-50 text-sm font-medium text-blue-600">1</button>
+                    <button disabled
+                        class="relative inline-flex items-center px-2 py-2 rounded-r-md border border-gray-300 bg-white text-sm font-medium text-gray-500 cursor-not-allowed">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const input = document.getElementById('member-search');
+    const tbody = document.getElementById('member-tbody');
+    if (!input || !tbody) return;
+
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+
+    function filter(query) {
+        const q = (query || '').toLowerCase().trim();
+        rows.forEach(row => {
+            const match = row.textContent.toLowerCase().includes(q);
+            row.classList.toggle('hidden', !match);
+        });
+    }
+
+    let t;
+    input.addEventListener('input', e => {
+        clearTimeout(t);
+        t = setTimeout(() => filter(e.target.value), 120);
+    });
+})();
+</script>
   
